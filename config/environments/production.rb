@@ -79,10 +79,15 @@ Rails.application.configure do
   # Only use :id for inspections in production.
   config.active_record.attributes_for_inspect = [ :id ]
 
+  # Permite que Rails sirva os assets diretamente
+  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+
+  # Evita problemas de cache e compilação no Render
   config.assets.compile = true
   config.assets.digest = true
-  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
-  config.assets.css_compressor = nil # Evita problemas com Sass
+
+  # Se estiver usando Webpacker, evita erro de compressão
+  config.assets.css_compressor = nil
 
 
   # Enable DNS rebinding protection and other `Host` header attacks.
