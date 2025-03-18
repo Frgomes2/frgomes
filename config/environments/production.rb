@@ -88,6 +88,8 @@ Rails.application.configure do
 
   # Se estiver usando Webpacker, evita erro de compressão
   config.assets.css_compressor = nil
+  config.log_level = :debug
+
 
 
   # Enable DNS rebinding protection and other `Host` header attacks.
