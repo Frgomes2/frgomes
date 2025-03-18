@@ -13,4 +13,5 @@ export RAILS_LOG_TO_STDOUT=true
 bundle exec rails db:migrate
 
 # Compilar os assets SEM limpar antes
-bundle exec rake assets:precompile --trace
+echo "Pulando a compilação de assets no Render"
+
